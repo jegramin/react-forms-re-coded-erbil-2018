@@ -11,6 +11,12 @@ class Form extends Component {
 
 <input type="text" id="firstName" onChange={event => this.handleFirstNameChange(event)} value={this.state.firstName} />
 <input type="text" id="lastName" onChange={event => this.handleLastNameChange(event)} value={this.state.lastName} />
+handleSubmit = event => {
+  event.preventDefault()
+  const firstName = event.target.children[0].value
+  const lasstName = event.target.children[1].value
+  this.sendFormDataSomewhere({ firstName, lastName })
+}
  
   render() {
     return (
